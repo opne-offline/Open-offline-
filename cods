@@ -1,0 +1,66 @@
+body {
+    background: url('path_to_hogwarts_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: starryNight 10s infinite alternate;
+}
+
+/* تأثير النجوم المتلألئة */
+@keyframes starryNight {
+    0% {
+        background: url('stars1.png') no-repeat center center fixed;
+    }
+    50% {
+        background: url('stars2.png') no-repeat center center fixed;
+    }
+    100% {
+        background: url('stars3.png') no-repeat center center fixed;
+    }
+}
+button {
+    position: relative;
+    background-color: #6c4f1a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.5s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button:hover::before {
+    width: 0;
+    height: 0;
+}
+
+button:hover {
+    background-color: #8b662d;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+function highlightWinner(cells) {
+    for (let i = 0; i < cells.length; i++) {
+        if (cells[i].innerText) {
+            cells[i].style.backgroundColor = '#FFD700';  // تأثير ذهبي حول الفائز
+            cells[i].style.transform = 'scale(1.2)'; // تكبير خفيف
+        }
+    }
+}
+h2 {
+    font-family: 'Times New Roman', serif;
+    color: gold;
+    text-align: center;
+    font-size: 2em;
+}
